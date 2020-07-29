@@ -1,0 +1,97 @@
+2020-07-07 10:24:03  [ main:0 ] - [ DEBUG ]  Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2020-07-07 10:24:19  [ main:0 ] - [ DEBUG ]  Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2020-07-07 10:24:21  [ main:1199 ] - [ DEBUG ]  {conn-10001} connected
+2020-07-07 10:24:21  [ main:1206 ] - [ DEBUG ]  {conn-10001, stmt-20000} created
+2020-07-07 10:24:21  [ main:1284 ] - [ DEBUG ]  {conn-10001, stmt-20000, rs-50000} query executed. 77.745 millis. SELECT 1
+2020-07-07 10:24:21  [ main:1285 ] - [ DEBUG ]  {conn-10001, stmt-20000, rs-50000} open
+2020-07-07 10:24:21  [ main:1287 ] - [ DEBUG ]  {conn-10001, stmt-20000, rs-50000} Header: []
+2020-07-07 10:24:21  [ main:1295 ] - [ DEBUG ]  {conn-10001, stmt-20000, rs-50000} Result: [1]
+2020-07-07 10:24:21  [ main:1296 ] - [ DEBUG ]  {conn-10001, stmt-20000, rs-50000} closed
+2020-07-07 10:24:21  [ main:1296 ] - [ DEBUG ]  {conn-10001, stmt-20000} closed
+2020-07-07 10:24:21  [ main:1305 ] - [ DEBUG ]  {conn-10002} connected
+2020-07-07 10:24:21  [ main:1305 ] - [ DEBUG ]  {conn-10002, stmt-20001} created
+2020-07-07 10:24:21  [ main:1307 ] - [ DEBUG ]  {conn-10002, stmt-20001, rs-50001} query executed. 0.945 millis. SELECT 1
+2020-07-07 10:24:21  [ main:1307 ] - [ DEBUG ]  {conn-10002, stmt-20001, rs-50001} open
+2020-07-07 10:24:21  [ main:1307 ] - [ DEBUG ]  {conn-10002, stmt-20001, rs-50001} Header: []
+2020-07-07 10:24:21  [ main:1307 ] - [ DEBUG ]  {conn-10002, stmt-20001, rs-50001} Result: [1]
+2020-07-07 10:24:21  [ main:1307 ] - [ DEBUG ]  {conn-10002, stmt-20001, rs-50001} closed
+2020-07-07 10:24:21  [ main:1308 ] - [ DEBUG ]  {conn-10002, stmt-20001} closed
+2020-07-07 10:24:21  [ main:1316 ] - [ DEBUG ]  {conn-10003} connected
+2020-07-07 10:24:21  [ main:1317 ] - [ DEBUG ]  {conn-10003, stmt-20002} created
+2020-07-07 10:24:21  [ main:1318 ] - [ DEBUG ]  {conn-10003, stmt-20002, rs-50002} query executed. 0.7456 millis. SELECT 1
+2020-07-07 10:24:21  [ main:1318 ] - [ DEBUG ]  {conn-10003, stmt-20002, rs-50002} open
+2020-07-07 10:24:21  [ main:1318 ] - [ DEBUG ]  {conn-10003, stmt-20002, rs-50002} Header: []
+2020-07-07 10:24:21  [ main:1318 ] - [ DEBUG ]  {conn-10003, stmt-20002, rs-50002} Result: [1]
+2020-07-07 10:24:21  [ main:1318 ] - [ DEBUG ]  {conn-10003, stmt-20002, rs-50002} closed
+2020-07-07 10:24:21  [ main:1319 ] - [ DEBUG ]  {conn-10003, stmt-20002} closed
+2020-07-07 10:24:21  [ main:1334 ] - [ DEBUG ]  {conn-10004} connected
+2020-07-07 10:24:21  [ main:1335 ] - [ DEBUG ]  {conn-10004, stmt-20003} created
+2020-07-07 10:24:21  [ main:1336 ] - [ DEBUG ]  {conn-10004, stmt-20003, rs-50003} query executed. 1.0255 millis. SELECT 1
+2020-07-07 10:24:21  [ main:1336 ] - [ DEBUG ]  {conn-10004, stmt-20003, rs-50003} open
+2020-07-07 10:24:21  [ main:1336 ] - [ DEBUG ]  {conn-10004, stmt-20003, rs-50003} Header: []
+2020-07-07 10:24:21  [ main:1337 ] - [ DEBUG ]  {conn-10004, stmt-20003, rs-50003} Result: [1]
+2020-07-07 10:24:21  [ main:1337 ] - [ DEBUG ]  {conn-10004, stmt-20003, rs-50003} closed
+2020-07-07 10:24:21  [ main:1337 ] - [ DEBUG ]  {conn-10004, stmt-20003} closed
+2020-07-07 10:24:21  [ main:1344 ] - [ DEBUG ]  {conn-10005} connected
+2020-07-07 10:24:21  [ main:1344 ] - [ DEBUG ]  {conn-10005, stmt-20004} created
+2020-07-07 10:24:21  [ main:1345 ] - [ DEBUG ]  {conn-10005, stmt-20004, rs-50004} query executed. 0.9056 millis. SELECT 1
+2020-07-07 10:24:21  [ main:1346 ] - [ DEBUG ]  {conn-10005, stmt-20004, rs-50004} open
+2020-07-07 10:24:21  [ main:1346 ] - [ DEBUG ]  {conn-10005, stmt-20004, rs-50004} Header: []
+2020-07-07 10:24:21  [ main:1346 ] - [ DEBUG ]  {conn-10005, stmt-20004, rs-50004} Result: [1]
+2020-07-07 10:24:21  [ main:1346 ] - [ DEBUG ]  {conn-10005, stmt-20004, rs-50004} closed
+2020-07-07 10:24:21  [ main:1347 ] - [ DEBUG ]  {conn-10005, stmt-20004} closed
+2020-07-07 10:24:21  [ main:1350 ] - [ INFO ]  {dataSource-1} inited
+2020-07-07 10:24:21  [ main:1355 ] - [ DEBUG ]  {conn-10005} pool-connect
+2020-07-07 10:24:21  [ main:1358 ] - [ DEBUG ]  {conn-10005} setAutoCommit false
+2020-07-07 10:24:21  [ main:1432 ] - [ DEBUG ]  Creating a new SqlSession
+2020-07-07 10:24:21  [ main:1437 ] - [ DEBUG ]  Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73f0b216]
+2020-07-07 10:24:21  [ main:1471 ] - [ DEBUG ]  JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@34ac72c3] will be managed by Spring
+2020-07-07 10:24:21  [ main:1475 ] - [ DEBUG ]  ==>  Preparing: select * from UserInfo WHERE UserId like ? 
+2020-07-07 10:24:21  [ main:1523 ] - [ DEBUG ]  {conn-10005, pstmt-20005} created. select * from UserInfo
+         
+         WHERE  UserId like ?
+2020-07-07 10:24:21  [ main:1535 ] - [ DEBUG ]  ==> Parameters: 12(String)
+2020-07-07 10:24:21  [ main:1536 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Parameters : [12]
+2020-07-07 10:24:21  [ main:1536 ] - [ DEBUG ]  {conn-10005, pstmt-20005} Types : [VARCHAR]
+2020-07-07 10:24:21  [ main:1538 ] - [ DEBUG ]  {conn-10005, pstmt-20005} executed. 2.8181 millis. select * from UserInfo
+         
+         WHERE  UserId like ?
+2020-07-07 10:24:21  [ main:1539 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} open
+2020-07-07 10:24:21  [ main:1539 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Header: [UserId, UserNumber, UserPwd, UserSex, UserName, UserPart, UserType, UserBirthday, UserAddress, UserSignDate, UserHeadImg, UserLike, UserStr, StrString, IntInteger]
+2020-07-07 10:24:21  [ main:1548 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} Result: [12, 123456, dsdsds, true, hao, 用户, vip, 201203, 火星, null, null, null, null, null, null]
+2020-07-07 10:24:21  [ main:1550 ] - [ DEBUG ]  <==      Total: 1
+2020-07-07 10:24:21  [ main:1550 ] - [ DEBUG ]  {conn-10005, pstmt-20005, rs-50005} closed
+2020-07-07 10:24:21  [ main:1557 ] - [ DEBUG ]  {conn-10005, pstmt-20005} clearParameters. 
+2020-07-07 10:24:21  [ main:1557 ] - [ DEBUG ]  {conn-10005, pstmt-20005} enter cache
+2020-07-07 10:24:21  [ main:1558 ] - [ DEBUG ]  Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73f0b216]
+2020-07-07 10:24:21  [ main:1558 ] - [ DEBUG ]  Fetched SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73f0b216] from current transaction
+2020-07-07 10:24:21  [ main:1558 ] - [ DEBUG ]  ==>  Preparing: select * from UserInfo 
+2020-07-07 10:24:21  [ main:1558 ] - [ DEBUG ]  {conn-10005, pstmt-20006} created. select * from UserInfo
+2020-07-07 10:24:21  [ main:1559 ] - [ DEBUG ]  ==> Parameters: 
+2020-07-07 10:24:21  [ main:1559 ] - [ DEBUG ]  {conn-10005, pstmt-20006} Parameters : []
+2020-07-07 10:24:21  [ main:1559 ] - [ DEBUG ]  {conn-10005, pstmt-20006} Types : []
+2020-07-07 10:24:21  [ main:1561 ] - [ DEBUG ]  {conn-10005, pstmt-20006} executed. 2.1112 millis. select * from UserInfo
+2020-07-07 10:24:21  [ main:1561 ] - [ DEBUG ]  {conn-10005, pstmt-20006, rs-50006} open
+2020-07-07 10:24:21  [ main:1562 ] - [ DEBUG ]  {conn-10005, pstmt-20006, rs-50006} Header: [UserId, UserNumber, UserPwd, UserSex, UserName, UserPart, UserType, UserBirthday, UserAddress, UserSignDate, UserHeadImg, UserLike, UserStr, StrString, IntInteger]
+2020-07-07 10:24:21  [ main:1562 ] - [ DEBUG ]  {conn-10005, pstmt-20006, rs-50006} Result: [12, 123456, dsdsds, true, hao, 用户, vip, 201203, 火星, null, null, null, null, null, null]
+2020-07-07 10:24:21  [ main:1563 ] - [ DEBUG ]  {conn-10005, pstmt-20006, rs-50006} Result: [13, 12, 222, false, ww, root, root, 1212, 潘多拉, null, null, null, null, null, null]
+2020-07-07 10:24:21  [ main:1564 ] - [ DEBUG ]  <==      Total: 2
+2020-07-07 10:24:21  [ main:1564 ] - [ DEBUG ]  {conn-10005, pstmt-20006, rs-50006} closed
+2020-07-07 10:24:21  [ main:1564 ] - [ DEBUG ]  {conn-10005, pstmt-20006} clearParameters. 
+2020-07-07 10:24:21  [ main:1565 ] - [ DEBUG ]  {conn-10005, pstmt-20006} enter cache
+2020-07-07 10:24:21  [ main:1565 ] - [ DEBUG ]  Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73f0b216]
+2020-07-07 10:24:46  [ main:26617 ] - [ DEBUG ]  Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73f0b216]
+2020-07-07 10:24:46  [ main:26617 ] - [ DEBUG ]  Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@73f0b216]
+2020-07-07 10:24:46  [ main:26618 ] - [ DEBUG ]  {conn 10005} rollback
+2020-07-07 10:24:46  [ main:26618 ] - [ DEBUG ]  {conn-10005} setAutoCommit true
+2020-07-07 10:24:46  [ main:26619 ] - [ DEBUG ]  {conn-10005} pool-recycle
+2020-07-07 10:24:46  [ Thread-2:26625 ] - [ DEBUG ]  {conn-10001} closed
+2020-07-07 10:24:46  [ Thread-2:26626 ] - [ DEBUG ]  {conn-10002} closed
+2020-07-07 10:24:46  [ Thread-2:26627 ] - [ DEBUG ]  {conn-10003} closed
+2020-07-07 10:24:46  [ Thread-2:26627 ] - [ DEBUG ]  {conn-10004} closed
+2020-07-07 10:24:46  [ Thread-2:26627 ] - [ DEBUG ]  {conn-10005, pstmt-20005} exit cache
+2020-07-07 10:24:46  [ Thread-2:26627 ] - [ DEBUG ]  {conn-10005, pstmt-20005} closed
+2020-07-07 10:24:46  [ Thread-2:26628 ] - [ DEBUG ]  {conn-10005, pstmt-20006} exit cache
+2020-07-07 10:24:46  [ Thread-2:26628 ] - [ DEBUG ]  {conn-10005, pstmt-20006} closed
+2020-07-07 10:24:46  [ Thread-2:26628 ] - [ DEBUG ]  {conn-10005} closed
+2020-07-07 10:24:46  [ Thread-2:26629 ] - [ INFO ]  {dataSource-1} closed

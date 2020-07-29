@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="xrtest@192.0.0.38">
+  <database-model serializer="dbm" rdbms="MSSQL" format-version="4.9">
+    <root id="1">
+      <ServerVersion>12.0.200</ServerVersion>
+      <ServerType>standalone</ServerType>
+    </root>
+    <database id="2" parent="1" name="xrtest">
+      <ObjectId>13</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="master">
+      <ObjectId>1</ObjectId>
+    </database>
+    <database id="4" parent="1" name="tempdb">
+      <ObjectId>2</ObjectId>
+    </database>
+    <database id="5" parent="1" name="model">
+      <ObjectId>3</ObjectId>
+    </database>
+    <database id="6" parent="1" name="msdb">
+      <ObjectId>4</ObjectId>
+    </database>
+    <database id="7" parent="1" name="web">
+      <ObjectId>5</ObjectId>
+    </database>
+    <database id="8" parent="1" name="WebCtrlDataCenter">
+      <ObjectId>6</ObjectId>
+    </database>
+    <database id="9" parent="1" name="PsFrameTest">
+      <ObjectId>7</ObjectId>
+    </database>
+    <database id="10" parent="1" name="GJJ_Product_New">
+      <ObjectId>8</ObjectId>
+    </database>
+    <database id="11" parent="1" name="Constract">
+      <ObjectId>9</ObjectId>
+    </database>
+    <database id="12" parent="1" name="ConstractTest">
+      <ObjectId>10</ObjectId>
+    </database>
+    <database id="13" parent="1" name="AutoInvoice">
+      <ObjectId>11</ObjectId>
+    </database>
+    <database id="14" parent="1" name="ps_crm">
+      <ObjectId>12</ObjectId>
+    </database>
+    <database id="15" parent="1" name="RaiseTechMgt">
+      <ObjectId>14</ObjectId>
+    </database>
+    <database id="16" parent="1" name="RealEstateMonitor">
+      <ObjectId>15</ObjectId>
+    </database>
+    <database id="17" parent="1" name="RealEstate_DB_1_0">
+      <ObjectId>16</ObjectId>
+    </database>
+    <schema id="18" parent="2" name="dbo">
+      <ObjectId>1</ObjectId>
+      <IntrospectionTimestamp>2020-07-04.01:01:22.030</IntrospectionTimestamp>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="19" parent="2" name="guest">
+      <ObjectId>2</ObjectId>
+    </schema>
+    <schema id="20" parent="2" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+    </schema>
+    <schema id="21" parent="2" name="sys">
+      <ObjectId>4</ObjectId>
+    </schema>
+    <schema id="22" parent="2" name="db_owner">
+      <ObjectId>16384</ObjectId>
+    </schema>
+    <schema id="23" parent="2" name="db_accessadmin">
+      <ObjectId>16385</ObjectId>
+    </schema>
+    <schema id="24" parent="2" name="db_securityadmin">
+      <ObjectId>16386</ObjectId>
+    </schema>
+    <schema id="25" parent="2" name="db_ddladmin">
+      <ObjectId>16387</ObjectId>
+    </schema>
+    <schema id="26" parent="2" name="db_backupoperator">
+      <ObjectId>16389</ObjectId>
+    </schema>
+    <schema id="27" parent="2" name="db_datareader">
+      <ObjectId>16390</ObjectId>
+    </schema>
+    <schema id="28" parent="2" name="db_datawriter">
+      <ObjectId>16391</ObjectId>
+    </schema>
+    <schema id="29" parent="2" name="db_denydatareader">
+      <ObjectId>16392</ObjectId>
+    </schema>
+    <schema id="30" parent="2" name="db_denydatawriter">
+      <ObjectId>16393</ObjectId>
+    </schema>
+    <table id="31" parent="18" name="UserInfo">
+      <ObjectId>245575913</ObjectId>
+      <CreatedTimestamp>2020-07-04.00:39:08.190</CreatedTimestamp>
+      <ModifiedTimestamp>2020-07-04.00:39:08.190</ModifiedTimestamp>
+    </table>
+    <column id="32" parent="31" name="UserId">
+      <Position>1</Position>
+      <DataType>varchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="33" parent="31" name="UserNumber">
+      <Position>2</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <column id="34" parent="31" name="UserPwd">
+      <Position>3</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <column id="35" parent="31" name="UserSex">
+      <Position>4</Position>
+      <DataType>bit|0s</DataType>
+    </column>
+    <column id="36" parent="31" name="UserName">
+      <Position>5</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <column id="37" parent="31" name="UserPart">
+      <Position>6</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <column id="38" parent="31" name="UserType">
+      <Position>7</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <column id="39" parent="31" name="UserBirthday">
+      <Position>8</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <column id="40" parent="31" name="UserAddress">
+      <Position>9</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <column id="41" parent="31" name="UserSignDate">
+      <Position>10</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <column id="42" parent="31" name="UserHeadImg">
+      <Position>11</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <column id="43" parent="31" name="UserLike">
+      <Position>12</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <column id="44" parent="31" name="UserStr">
+      <Position>13</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <column id="45" parent="31" name="StrString">
+      <Position>14</Position>
+      <DataType>varchar(255 char)|0s</DataType>
+    </column>
+    <column id="46" parent="31" name="IntInteger">
+      <Position>15</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <index id="47" parent="31" name="PK__UserInfo__1788CC4CFE49B9DF">
+      <Position>1</Position>
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>UserId</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="48" parent="31" name="PK__UserInfo__1788CC4CFE49B9DF">
+      <ObjectId>261575970</ObjectId>
+      <NameSurrogate>1</NameSurrogate>
+      <CreatedTimestamp>2020-07-04.00:39:08.517</CreatedTimestamp>
+      <ModifiedTimestamp>2020-07-04.00:39:08.517</ModifiedTimestamp>
+      <ColNames>UserId</ColNames>
+      <UnderlyingIndexName>PK__UserInfo__1788CC4CFE49B9DF</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

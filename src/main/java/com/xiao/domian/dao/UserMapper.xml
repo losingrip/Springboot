@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xiao.domian.dao.UserMapper">
+    <resultMap id="userResultMap" type="com.xiao.domian.entity.User">
+        <id property="userId" column="UserId" />
+        <result property="userNumber" column="UserNumber" />
+        <result property="userPwd" column="UserPwd" />
+        <result property="userSex" column="UserSex" />
+        <result property="userName" column="UserName" />
+        <result property="userPart" column="UserPart" />
+        <result property="userType" column="UserType" />
+        <result property="userBirthday" column="UserBirthday" />
+        <result property="userAddress" column="UserAddress" />
+        <result property="userSignDate" column="UserSignDate" />
+        <result property="userHeadImg" column="UserHeadImg" />
+        <result property="userLike" column="UserLike" />
+        <result property="userStr" column="UserStr" />
+        <result property="strString" column="StrString" />
+        <result property="intInteger" column="IntInteger" />
+    </resultMap>
+    
+    <sql id="whereSql">
+        <trim prefix="WHERE" prefixOverrides="and |or ">
+            <if test="userId != null">
+                <if test="userId == ''">
+                    and (UserId is null or UserId = '')
+                </if>
+                <if test="userId != ''">
+                    and UserId like #{userId}
+                </if>
+            </if>
+            <if test="userNumber != null">
+                <if test="userNumber == ''">
+                    and (UserNumber is null or UserNumber = '')
+                </if>
+                <if test="userNumber !=''">
+                    and UserNumber like #{userNumber}
+                </if>
+            </if>
+        </trim>
+    </sql>
+
+    <select id="getUserInfo" parameterType="com.xiao.domian.entity.User" resultMap="userResultMap">
+        select * from UserInfo
+        <include refid="whereSql"/>
+    </select>
+
+    <select id="getUserInfoList" parameterType="com.xiao.domian.entity.User" resultMap="userResultMap">
+        select * from UserInfo
+        <include refid="whereSql"/>
+    </select>
+
+    <insert id="addUserInfo" parameterType="com.xiao.domian.entity.User" keyProperty="UserId">
+        insert into UserInfo(
+            UserId,
+            UserNumber,
+            UserPwd,
+            UserSex,
+            UserName,
+            UserPart,
+            UserType,
+            UserBirthday,
+            UserAddress,
+            UserSignDate,
+            UserHeadImg,
+            UserLike,
+            UserStr,
+            StrString,
+            IntInteger
+        )values(
+            #{userId,jdbcType=VARCHAR},
+            #{userNumber,jdbcType=VARCHAR},
+            #{userPwd,jdbcType=VARCHAR},
+            #{userSex,jdbcType=BOOLEAN},
+            #{userName,jdbcType=VARCHAR},
+            #{userPart,jdbcType=VARCHAR},
+            #{userType,jdbcType=VARCHAR},
+            #{userBirthday,jdbcType=VARCHAR},
+            #{userAddress,jdbcType=VARCHAR},
+            #{userSignDate,jdbcType=VARCHAR},
+            #{userHeadImg,jdbcType=VARCHAR},
+            #{userLike,jdbcType=VARCHAR},
+            #{userStr,jdbcType=VARCHAR},
+            #{strString,jdbcType=VARCHAR},
+            #{intInteger,jdbcType=INTEGER}
+        )
+    </insert>
+</mapper>
