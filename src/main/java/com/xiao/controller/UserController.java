@@ -2,6 +2,7 @@ package com.xiao.controller;
 
 
 import com.xiao.Utils.EmptyUtil;
+import com.xiao.annotation.Auth;
 import com.xiao.domian.entity.User;
 import com.xiao.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,8 +29,9 @@ public class UserController {
     }
 
     @PostMapping("/addUser")
+    @Auth(auth = "hello")
     public String addUserInfo(User user) throws Exception {
-        return null;
+        return userService.addUserInfo(user);
     }
 
     @GetMapping("/hello")

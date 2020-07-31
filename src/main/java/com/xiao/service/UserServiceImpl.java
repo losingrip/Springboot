@@ -1,5 +1,6 @@
 package com.xiao.service;
 
+import com.xiao.annotation.Auth;
 import com.xiao.domian.dao.UserMapper;
 import com.xiao.domian.entity.User;
 import org.hibernate.validator.internal.util.StringHelper;
@@ -12,7 +13,7 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Resource
-    UserMapper userMapper;
+    private UserMapper userMapper;
 
     /**
      * 获取用户信息

@@ -1,5 +1,6 @@
 package com.xiao.service;
 
+import com.xiao.annotation.Auth;
 import com.xiao.domian.entity.User;
 
 import java.util.List;

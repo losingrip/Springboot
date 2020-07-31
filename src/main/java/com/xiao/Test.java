@@ -1,6 +1,9 @@
 package com.xiao;
 
 
+import com.xiao.domian.entity.User;
+import com.xiao.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import sun.misc.BASE64Encoder;
 
 import java.io.ByteArrayOutputStream;
@@ -243,8 +246,24 @@ public class Test {
         return nums[nums.length-1]*nums[nums.length-2]-nums[nums.length-1]-nums[nums.length-2]+1;
     }
 
-    public String destCity(List<List<String>> paths) {
-        return null;
+    public int[] replaceElements(int[] arr) {
+        int[] brr = new int[arr.length - 1];
+        int temp = 0;
+        int j = 0;
+        for (int i = arr.length - 1; i > 0; i--) {
+            if (arr[i] > temp) {
+                temp = arr[i];
+            }
+            brr[j] = temp;
+            j++;
+        }
+        j = arr.length - 2;
+        for (int i = 0; i < arr.length - 1; i++) {
+            arr[i] = brr[j];
+            j--;
+        }
+        arr[arr.length - 1] = -1;
+        return arr;
     }
 
     public static void main(String[] args) {
@@ -342,6 +361,8 @@ public class Test {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
     }
 
     public int[] runningSum(int[] nums) {
