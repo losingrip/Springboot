@@ -2,6 +2,8 @@ package com.xiao.domian.entity;
 
 import lombok.Data;
 
+import java.net.DatagramPacket;
+
 /**
  * 用户个人信息 的摘要说明。
  *

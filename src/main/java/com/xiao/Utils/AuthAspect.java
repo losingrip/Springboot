@@ -23,35 +23,47 @@ import java.util.Map;
 public class AuthAspect {
 
     @Pointcut(value = "@annotation(com.xiao.annotation.Auth)")
-    public void authCheck(){}
+    public void authCheck() {
+    }
 
 
     @Around("authCheck()")
-    public Object around(ProceedingJoinPoint point) throws Throwable{
+    public Object around(ProceedingJoinPoint point) throws Throwable {
+
+        String UserPart = getPart();
+        Logger logger = LoggerFactory.getLogger(AuthAspect.class);
+        Signature signature = point.getSignature();
+        String className = point.getTarget().getClass().getSimpleName();
+        String methodName = signature.getName();
+        logger.info(className, methodName);
+
+        MethodSignature methodSignature = (MethodSignature) signature;
+        Method targetMethod = methodSignature.getMethod();
+        if (targetMethod.isAnnotationPresent(Auth.class)) {
+            Auth auth = targetMethod.getAnnotation(Auth.class);
+            String auths = auth.auth();
+            if (StringUtils.isEmpty(auths)) {
+            }
+            return point.proceed();
+        }
+        return "good";
+    }
+
+    public String getPart() {
 
         ServletRequestAttributes attributes = (ServletRequestAttributes)
                 RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
 
         String token = request.getHeader("token");
+        String Part = null;
         Map map = request.getParameterMap();
         System.out.println(map);
         System.out.println(token);
-        Logger logger = LoggerFactory.getLogger(AuthAspect.class);
-        Signature signature = point.getSignature();
-        String className = point.getTarget().getClass().getSimpleName();
-        String methodName = signature.getName();
-        logger.info(className,methodName);
+        return Part;
+    }
 
-        MethodSignature methodSignature = (MethodSignature)signature;
-        Method targetMethod = methodSignature.getMethod();
-        if (targetMethod.isAnnotationPresent(Auth.class)){
-            Auth auth = targetMethod.getAnnotation(Auth.class);
-            String auths = auth.auth();
-            if (StringUtils.isEmpty(auths)){
-            }
-            return point.proceed();
-        }
-        return "good";
+    public boolean isHaveAuth(String Auth,String UserPart){
+        return true;
     }
 }

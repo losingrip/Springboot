@@ -1,9 +1,6 @@
 package com.xiao;
 
-
-import com.xiao.domian.entity.User;
-import com.xiao.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.xiao.Zero.UserType;
 import sun.misc.BASE64Encoder;
 
 import java.io.ByteArrayOutputStream;
@@ -17,6 +14,7 @@ public class Test {
 
     private static void Accept(doinbi str) {
         str.setNumber("12312");
+        str.setType(UserType.一般会员);
         System.out.println("print value" + str);
     }
 
@@ -266,6 +264,24 @@ public class Test {
         return arr;
     }
 
+    public static int[] printNumbers(int n) {
+        int temp = (int) (Math.pow(10,n)-1);
+        int[] res = new int[temp-1];
+        for (int i = 0;i<temp;i++){
+            res[i]=i+1;
+        }
+        return res;
+    }
+
+    public String restoreString(String s, int[] indices) {
+        char[] res=new char[indices.length];
+        for(int i=indices.length-1;i>-1;i--){
+            res[indices[i]]=s.charAt(i);
+        }
+        return String.valueOf(res);
+    }
+
+
     public static void main(String[] args) {
 
         System.out.println(doinbi.class);
@@ -362,6 +378,8 @@ public class Test {
             e.printStackTrace();
         }
 
+
+        printNumbers(1);
 
     }
 
