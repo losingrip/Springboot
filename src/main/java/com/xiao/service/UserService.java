@@ -28,4 +28,10 @@ public interface UserService {
      */
     List<User> getUserInfoList(User user);
 
+    /**
+     * 查询用户角色
+     * @return user
+     */
+    List<User> getUserPart();
+
 }

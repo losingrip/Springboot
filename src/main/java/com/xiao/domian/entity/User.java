@@ -3,6 +3,7 @@ package com.xiao.domian.entity;
 import lombok.Data;
 
 import java.net.DatagramPacket;
+import java.util.List;
 
 /**
  * 用户个人信息 的摘要说明。
@@ -44,6 +45,8 @@ public class User {
     private String strString;
     //备用.
     private int intInteger;
+    //角色.
+    private List<Part> parts;
 
 }
 

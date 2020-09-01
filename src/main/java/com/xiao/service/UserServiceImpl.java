@@ -1,6 +1,5 @@
 package com.xiao.service;
 
-import com.xiao.annotation.Auth;
 import com.xiao.domian.dao.UserMapper;
 import com.xiao.domian.entity.User;
 import org.hibernate.validator.internal.util.StringHelper;
@@ -54,5 +53,14 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getUserInfoList(User user) {
         return userMapper.getUserInfoList(user);
+    }
+
+    /**
+     * 查询用户角色
+     * @return user
+     */
+    @Override
+    public List<User> getUserPart() {
+        return userMapper.getUserPart();
     }
 }

@@ -12,6 +12,5 @@ public class SpringbootApplication {
         SpringApplication.run(SpringbootApplication.class, args);
         Logger logger = LoggerFactory.getLogger(SpringApplication.class);
         logger.info("Hello XiaoRui!");
-
     }
 }

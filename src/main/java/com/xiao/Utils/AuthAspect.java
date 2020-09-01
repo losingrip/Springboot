@@ -1,6 +1,7 @@
 package com.xiao.Utils;
 
 import com.xiao.annotation.Auth;
+import com.xiao.domian.entity.User;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
@@ -63,7 +64,7 @@ public class AuthAspect {
         return Part;
     }
 
-    public boolean isHaveAuth(String Auth,String UserPart){
+    public boolean isHaveAuth(String UserId,String Auth){
         return true;
     }
 }

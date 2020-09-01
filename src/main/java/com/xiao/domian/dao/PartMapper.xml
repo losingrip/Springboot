@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xiao.domian.dao.PartMapper">
+    <resultMap id="partResultMap" type="com.xiao.domian.entity.Part">
+        <id property="partId" column="PartId"/>
+        <result property="partName" column="PartName"/>
+    </resultMap>
+
+    <resultMap id="partUserResultMap" type="com.xiao.domian.entity.Part">
+        <id property="partId" column="PartId"/>
+        <result property="partName" column="PartName"/>
+        <collection property="users" ofType="com.xiao.domian.entity.User">
+            <id property="userId" column="UserId"/>
+            <result property="userNumber" column="UserNumber"/>
+            <result property="userName" column="UserName"/>
+        </collection>
+    </resultMap>
+
+    <resultMap id="partResourceMap" type="com.xiao.domian.entity.Part">
+        <id property="partId" column="PartId"/>
+        <result property="partName" column="PartName"/>
+        <collection property="resources" ofType="com.xiao.domian.entity.Resource">
+            <id property="resourceId" column="ResourceId"/>
+            <result property="resourceName" column="ResourceName"/>
+            <result property="resourceRmake" column="resourceRmake"/>
+        </collection>
+     </resultMap>
+
+
+    <resultMap id="userResourceMap" type="com.xiao.domian.entity.Part">
+        <id property="partId" column="PartId"/>
+        <result property="partName" column="PartName"/>
+        <collection property="resources" ofType="com.xiao.domian.entity.Resource">
+            <id property="resourceId" column="ResourceId"/>
+            <result property="resourceName" column="ResourceName"/>
+            <result property="resourceRmake" column="resourceRmake"/>
+        </collection>
+        <collection property="users" ofType="com.xiao.domian.entity.User">
+            <id property="userId" column="UserId"/>
+            <result property="userNumber" column="UserNumber"/>
+            <result property="userName" column="UserName"/>
+        </collection>
+    </resultMap>
+
+    <sql id="whereSql">
+        <trim prefix="WHERE" prefixOverrides="and |or ">
+            <if test="userId != null">
+                <if test="userId == ''">
+                    and (UserId is null or UserId = '')
+                </if>
+                <if test="userId != ''">
+                    and UserId like #{userId}
+                </if>
+            </if>
+        </trim>
+    </sql>
+
+    <select id="getUserPart" parameterType="java.lang.String" resultMap="partUserResultMap">
+        select Part.*,UserInfo.UserId,UserInfo.UserName,UserInfo.UserNumber
+        from Part
+        left join UserPart on Part.PartId=UserPart.PartId
+        left join UserInfo on UserInfo.UserId=UserPart.UserId
+        where UserInfo.UserId=#{UserId}
+    </select>
+
+    <select id="getResource" parameterType="java.lang.String" resultMap="partResourceMap">
+        select Part.*,Resource.*
+        from Part
+        left join PartResource on PartResource.PartId=Part.PartId
+        left join Resource on Resource.ResourceId=PartResource.ResourceId
+        where Part.PartId=#{PartId}
+    </select>
+
+    <select id="getUserResource" parameterType="java.lang.String" resultMap="userResourceMap">
+        select Part.*,UserInfo.UserId,UserInfo.UserName,UserInfo.UserNumber,Resource.*
+        from Part
+        left join UserPart on Part.PartId=UserPart.PartId
+        left join UserInfo on UserInfo.UserId=UserPart.UserId
+        left join PartResource on PartResource.PartId=Part.PartId
+        left join Resource on Resource.ResourceId=PartResource.ResourceId
+        where UserInfo.UserId=#{UserId}
+    </select>
+
+</mapper>

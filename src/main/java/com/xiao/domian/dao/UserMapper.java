@@ -26,4 +26,10 @@ public interface UserMapper {
      * @return 用户id
      */
     String addUserInfo(User user);
+
+    /**
+     * 查询用户角色
+     * @return user
+     */
+    List<User> getUserPart();
 }

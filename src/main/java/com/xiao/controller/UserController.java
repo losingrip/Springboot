@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @PostMapping("/getUser")
     public User getUserInfo(String UserId, String UserNumber) throws Exception {
@@ -35,6 +35,7 @@ public class UserController {
     }
 
     @GetMapping("/hello")
+    @Auth(auth = "hello")
     public String hellotest() {
         return "hallo nmsl";
     }

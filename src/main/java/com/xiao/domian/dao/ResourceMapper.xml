@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xiao.domian.dao.ResourceMapper">
+    <resultMap id="partResultMap" type="com.xiao.domian.entity.Part">
+        <id property="partId" column="PartId"/>
+        <result property="partName" column="PartName"/>
+    </resultMap>
+
+    <resultMap id="partUserResultMap" type="com.xiao.domian.entity.Part">
+        <id property="partId" column="PartId"/>
+        <result property="partName" column="PartName"/>
+        <collection property="users" ofType="com.xiao.domian.entity.User">
+            <id property="userId" column="UserId"/>
+            <result property="userNumber" column="UserNumber"/>
+            <result property="userName" column="UserName"/>
+        </collection>
+    </resultMap>
+
+</mapper>

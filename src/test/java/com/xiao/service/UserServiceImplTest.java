@@ -33,5 +33,9 @@ public class UserServiceImplTest {
         list.forEach(x ->{
             System.out.println(x.toString());
         });
+
+
+        List<User> users = userService.getUserPart();
+        System.out.println(users);
     }
 }

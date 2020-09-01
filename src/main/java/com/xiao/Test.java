@@ -266,7 +266,7 @@ public class Test {
 
     public static int[] printNumbers(int n) {
         int temp = (int) (Math.pow(10,n)-1);
-        int[] res = new int[temp-1];
+        int[] res = new int[temp];
         for (int i = 0;i<temp;i++){
             res[i]=i+1;
         }
@@ -372,14 +372,14 @@ public class Test {
         try {
             Class<?> clasz = Class.forName("com.xiao.Utils.EmptyUtil");
             Method method = clasz.getMethod("isEmpty",String.class,String.class);
-            method.invoke(clasz.newInstance(),null,"hello");
+            method.invoke(clasz.newInstance(),"","hello");
 
         } catch (Exception e) {
             e.printStackTrace();
         }
 
 
-        printNumbers(1);
+        System.out.println("+++"+printNumbers(1));
 
     }
 

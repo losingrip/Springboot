@@ -21,6 +21,29 @@
         <result property="strString" column="StrString" />
         <result property="intInteger" column="IntInteger" />
     </resultMap>
+
+    <resultMap id="userPartResultMap" type="com.xiao.domian.entity.User">
+        <id property="userId" column="UserId" />
+        <result property="userNumber" column="UserNumber" />
+        <result property="userPwd" column="UserPwd" />
+        <result property="userSex" column="UserSex" />
+        <result property="userName" column="UserName" />
+        <result property="userPart" column="UserPart" />
+        <result property="userType" column="UserType" />
+        <result property="userBirthday" column="UserBirthday" />
+        <result property="userAddress" column="UserAddress" />
+        <result property="userSignDate" column="UserSignDate" />
+        <result property="userHeadImg" column="UserHeadImg" />
+        <result property="userLike" column="UserLike" />
+        <result property="userStr" column="UserStr" />
+        <result property="strString" column="StrString" />
+        <result property="intInteger" column="IntInteger" />
+        <collection property="parts" ofType="com.xiao.domian.entity.Part" resultMap="partMap"/>
+    </resultMap>
+    <resultMap id="partMap" type="com.xiao.domian.entity.Part">
+        <id property="partId" column="PartId"/>
+        <result property="partName" column="PartName"/>
+    </resultMap>
     
     <sql id="whereSql">
         <trim prefix="WHERE" prefixOverrides="and |or ">
@@ -51,6 +74,11 @@
     <select id="getUserInfoList" parameterType="com.xiao.domian.entity.User" resultMap="userResultMap">
         select * from UserInfo
         <include refid="whereSql"/>
+    </select>
+
+    <select id="getUserPart" resultMap="userPartResultMap">
+        select UserInfo.*,Part.* from UserInfo left join UserPart on UserInfo.UserId = UserPart.UserId
+        left join Part on UserPart.PartId=Part.PartId
     </select>
 
     <insert id="addUserInfo" parameterType="com.xiao.domian.entity.User" keyProperty="UserId">
