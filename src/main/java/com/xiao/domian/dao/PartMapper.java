@@ -26,5 +26,5 @@ public interface PartMapper {
      * @param UserId
      * @return
      */
-    List<Part> getUserResource(String UserId);
+    List<Part> getUserResource(String UserId,String Auth);
 }

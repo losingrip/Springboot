@@ -74,14 +74,14 @@
         where Part.PartId=#{PartId}
     </select>
 
-    <select id="getUserResource" parameterType="java.lang.String" resultMap="userResourceMap">
+    <select id="getUserResource" resultMap="userResourceMap">
         select Part.*,UserInfo.UserId,UserInfo.UserName,UserInfo.UserNumber,Resource.*
         from Part
         left join UserPart on Part.PartId=UserPart.PartId
         left join UserInfo on UserInfo.UserId=UserPart.UserId
         left join PartResource on PartResource.PartId=Part.PartId
         left join Resource on Resource.ResourceId=PartResource.ResourceId
-        where UserInfo.UserId=#{UserId}
+        where UserInfo.UserId=#{UserId} and Resource.ResourceName=#{Auth}
     </select>
 
 </mapper>

@@ -8,5 +8,4 @@ public class EmptyUtil {
         }else if (str.equals(""))
             throw new IllegalArgumentException(strName+"不能为空字符串！");
     }
-
 }

@@ -1,7 +1,11 @@
 package com.xiao.Utils;
 
 import com.xiao.annotation.Auth;
+import com.xiao.domian.dao.PartMapper;
+import com.xiao.domian.entity.Part;
+import com.xiao.domian.entity.Resource;
 import com.xiao.domian.entity.User;
+import com.xiao.service.AuthService;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
@@ -10,6 +14,7 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -17,11 +22,15 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
+import java.util.List;
 import java.util.Map;
 
 @Aspect
 @Component
 public class AuthAspect {
+
+    @Autowired
+    AuthService authService;
 
     @Pointcut(value = "@annotation(com.xiao.annotation.Auth)")
     public void authCheck() {
@@ -31,7 +40,6 @@ public class AuthAspect {
     @Around("authCheck()")
     public Object around(ProceedingJoinPoint point) throws Throwable {
 
-        String UserPart = getPart();
         Logger logger = LoggerFactory.getLogger(AuthAspect.class);
         Signature signature = point.getSignature();
         String className = point.getTarget().getClass().getSimpleName();
@@ -43,28 +51,30 @@ public class AuthAspect {
         if (targetMethod.isAnnotationPresent(Auth.class)) {
             Auth auth = targetMethod.getAnnotation(Auth.class);
             String auths = auth.auth();
-            if (StringUtils.isEmpty(auths)) {
+            System.out.println(auths + "============");
+            EmptyUtil.isEmpty(auths, "auths");
+            if (!getPart(auths)){
+                throw new Exception("没有权限！");
             }
             return point.proceed();
         }
-        return "good";
+        return "pass";
     }
 
-    public String getPart() {
+    public boolean getPart(String auth) {
 
         ServletRequestAttributes attributes = (ServletRequestAttributes)
                 RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = attributes.getRequest();
 
-        String token = request.getHeader("token");
-        String Part = null;
-        Map map = request.getParameterMap();
-        System.out.println(map);
-        System.out.println(token);
-        return Part;
-    }
-
-    public boolean isHaveAuth(String UserId,String Auth){
-        return true;
+        String UserId = request.getHeader("token");
+        List<Part> parts = authService.getUserResource(UserId, auth);
+        for (Part part:parts) {
+            List<Resource> resources = part.getResources();
+            if (resources.size()>0){
+                return true;
+            }
+        }
+        return false;
     }
 }

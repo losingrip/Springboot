@@ -36,7 +36,7 @@ public class UserController {
 
     @GetMapping("/hello")
     @Auth(auth = "hello")
-    public String hellotest() {
+    public String hellotest(String UserId) {
         return "hallo nmsl";
     }
 }

@@ -10,5 +10,5 @@ public interface AuthService {
 
     List<Part> getResource(String PartId);
 
-    List<Part> getUserResource(String UserId);
+    List<Part> getUserResource(String UserId,String Auth);
 }

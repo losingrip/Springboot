@@ -30,7 +30,7 @@ public class AuthServiceTest {
        List<Part> partList = authService.getResource("1");
        System.out.println(partList);
 
-       List<Part> userResource = authService.getUserResource("12");
+       List<Part> userResource = authService.getUserResource("12","hello");
         System.out.println(userResource);
     }
 }

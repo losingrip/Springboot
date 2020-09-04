@@ -28,8 +28,8 @@ public class AuthServiceImpl implements AuthService{
     }
 
     @Override
-    public List<Part> getUserResource(String UserId) {
+    public List<Part> getUserResource(String UserId ,String Auth) {
         EmptyUtil.isEmpty(UserId,"UserId");
-        return partMapper.getUserResource(UserId);
+        return partMapper.getUserResource(UserId,Auth);
     }
 }
